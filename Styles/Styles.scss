@@ -1,10 +1,8 @@
-
 $main-color: red;
 $text-color: #999;
 $font-family: 'Courier New', Courier, monospace;
 $white: #fff;
 $cart-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
-
 
 @mixin flexbox($direction: row, $justify: space-between, $align: center) {
     display: flex;
@@ -16,7 +14,6 @@ $cart-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
 @mixin box-shadow($offset-x, $offset-y, $blur, $spread, $color) {
     box-shadow: $offset-x $offset-y $blur $spread $color;
 }
-
 
 body {
     width: 100%;
@@ -31,26 +28,7 @@ img {
     width: 50px;
 }
 
-
-.header {
-    width: 100%;
-    padding: 20px 50px;
-    background-color: $main-color;
-    @include flexbox();
-
-    &__icon {
-        width: 50px;
-        cursor: pointer;
-        display: inline-block;
-
-        img {
-            width: 35px;
-            height: auto;
-        }
-    }
-}
-
-
+/* Cambio 3: Cambiar el color de fondo del banner */
 .banner {
     width: 100%;
     padding: 60px 0;
@@ -60,6 +38,7 @@ img {
     background-size: cover;
     color: $white;
     background-position-y: 60%;
+    background-color: darkblue; /* Agregado */
 
     &__title {
         width: 100%;
@@ -74,8 +53,12 @@ img {
         font-size: 25px;
         opacity: .7;
     }
-}
 
+    &__additional { /* Estilo para el nuevo párrafo */
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}
 
 .products {
     width: 100%;
@@ -104,6 +87,11 @@ img {
             font-weight: 300;
             font-size: 15px;
         }
+    }
+
+    /* Cambio 4: Modificar el tamaño de las imágenes */
+    &__image {
+        width: 250px; /* Aumentado de 200px a 250px */
     }
 }
 
