@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   width: 100%;
   font-size: 15px;
@@ -12,7 +11,25 @@ img {
   width: 50px;
 }
 
-/* Cambio 3: Cambiar el color de fondo del banner */
+.header {
+  width: 100%;
+  padding: 20px 50px;
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__icon {
+  width: 50px;
+  cursor: pointer;
+  display: inline-block;
+}
+.header__icon img {
+  width: 35px;
+  height: auto;
+}
+
 .banner {
   width: 100%;
   padding: 60px 0;
@@ -22,7 +39,6 @@ img {
   background-size: cover;
   color: #fff;
   background-position-y: 60%;
-  background-color: darkblue; /* Agregado */
 }
 .banner__title {
   width: 100%;
@@ -36,10 +52,6 @@ img {
   font-size: 25px;
   opacity: 0.7;
 }
-.banner__additional { /* Estilo para el nuevo párrafo */
-  font-size: 18px;
-  margin-top: 10px;
-}
 
 .products {
   width: 100%;
@@ -48,7 +60,6 @@ img {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Cambio 4: Modificar el tamaño de las imágenes */
 }
 .products__item {
   cursor: pointer;
@@ -66,9 +77,6 @@ img {
 .products__item__description {
   font-weight: 300;
   font-size: 15px;
-}
-.products__image {
-  width: 250px; /* Aumentado de 200px a 250px */
 }
 
 .cart {
