@@ -3,18 +3,15 @@ $text-color: #999;
 $font-family: 'Courier New', Courier, monospace;
 $white: #fff;
 $cart-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
-
 @mixin flexbox($direction: row, $justify: space-between, $align: center) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
 }
-
 @mixin box-shadow($offset-x, $offset-y, $blur, $spread, $color) {
     box-shadow: $offset-x $offset-y $blur $spread $color;
 }
-
 body {
     width: 100%;
     font-size: 15px;
@@ -23,12 +20,24 @@ body {
     font-family: $font-family;
     margin: 0;
 }
-
 img {
     width: 50px;
 }
-
-/* Cambio 3: Cambiar el color de fondo del banner */
+.header {
+    width: 100%;
+    padding: 20px 50px;
+    background-color: $main-color;
+    @include flexbox();
+    &__icon {
+        width: 50px;
+        cursor: pointer;
+        display: inline-block;
+        img {
+            width: 35px;
+            height: auto;
+        }
+    }
+}
 .banner {
     width: 100%;
     padding: 60px 0;
@@ -38,28 +47,19 @@ img {
     background-size: cover;
     color: $white;
     background-position-y: 60%;
-    background-color: darkblue; /* Agregado */
-
     &__title {
         width: 100%;
         font-weight: 600;
         font-size: 30px;
         margin: 10px;
     }
-
     &__subtitle {
         width: 100%;
         margin: 0 auto;
         font-size: 25px;
         opacity: .7;
     }
-
-    &__additional { /* Estilo para el nuevo párrafo */
-        font-size: 18px;
-        margin-top: 10px;
-    }
 }
-
 .products {
     width: 100%;
     margin: 0 auto;
@@ -67,45 +67,39 @@ img {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
     &__item {
         cursor: pointer;
         text-align: center;
-
         &__image {
             width: 200px;
             margin-bottom: 15px;
         }
-
         &__name {
             font-weight: 500;
             font-size: 17px;
             margin-bottom: 5px;
         }
-
         &__description {
             font-weight: 300;
             font-size: 15px;
         }
     }
-
-    /* Cambio 4: Modificar el tamaño de las imágenes */
-    &__image {
-        width: 250px; /* Aumentado de 200px a 250px */
-    }
 }
-
 .cart {
     width: 500px;
-    background-color: $white;
+    background-color: rgba(255, 255, 255, 0.9);;
     padding: 25px;
     box-sizing: border-box;
-    height: 100px;
+    height: 1000px;
     position: fixed;
-    right: -100%;
+    right: -0%;
     top: 100px;
     @include box-shadow(-19px, -1px, 22px, -15px, rgba(0, 0, 0, 0.3));
-
+    transition: all .25s ease;
+    &.show{
+        right: -100%;
+    }
+    
     &__title {
         width: 100%;
         text-align: center;
@@ -114,93 +108,74 @@ img {
         padding: 25px 0;
         box-sizing: border-box;
     }
-
     &__item {
         background-color: $white;
         border-bottom: 1px solid #333;
         @include flexbox();
         padding: 15px;
         box-sizing: border-box;
-
         &__image {
             width: 60px;
         }
-
         &__name {
             font-weight: 500;
         }
-
         &__delete-icon {
             width: 25px;
             cursor: pointer;
         }
     }
 }
-
 @media (max-width: 820px) {
     .header {
         padding: 15px;
-
         &__logo {
             width: 60px;
         }
     }
-
     .products {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
         &__image {
             width: 150px;
         }
     }
-
     .cart {
         width: 400px;
         top: 80px;
     }
 }
-
 @media (max-width: 480px) {
     .banner {
         padding: 30px 0;
-
         &__title {
             font-size: 18px;
         }
-
         &__subtitle {
             font-size: 16px;
         }
     }
-
     .products {
         grid-template-columns: 1fr;
         padding: 10px;
-
         &__image {
             width: 100%;
             max-width: 200px;
             margin-bottom: 10px;
         }
-
         &__name,
         &__description {
             padding: 0 10px;
         }
     }
-
     .cart {
         width: 100%;
         box-shadow: none;
-
         &__title {
             padding: 15px 0;
         }
-
         &__item {
             flex-direction: column;
             align-items: center;
-
             &__image {
                 width: 100px;
             }

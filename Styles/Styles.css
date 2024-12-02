@@ -81,14 +81,18 @@ img {
 
 .cart {
   width: 500px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 25px;
   box-sizing: border-box;
-  height: 100px;
+  height: 1000px;
   position: fixed;
-  right: -100%;
+  right: 0%;
   top: 100px;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+}
+.cart.show {
+  right: -100%;
 }
 .cart__title {
   width: 100%;
