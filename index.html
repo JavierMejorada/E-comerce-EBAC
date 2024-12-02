@@ -18,8 +18,9 @@
             <img src="img/588a6507d06f6719692a2d15.png" alt="menu">
         </div>
         <img src="img/ferrari_PNG10665.png" alt="Logo de Ferrari" class="header__logo">
-        <div class="header__icon">
+        <div class="header__icon cart-container"> 
             <img src="img/image_processing20210620-8688-1jswwh5.png" alt="Icono descubrir">
+            <span class="cart-count">0</span> 
         </div>
     </header>
 
@@ -27,7 +28,7 @@
         <section class="banner">
             <h2 class="banner__title">Arranca el motor</h2>
             <p class="banner__subtitle">Descubre la gama de Ferrari</p>
-            <!-- Cambio 1: Agregar un nuevo párrafo -->
+            
             <p class="banner__additional">¡Bienvenido a la experiencia Ferrari!</p>
         </section>
         <section class="products">
@@ -35,33 +36,57 @@
                 <img src="img/131-1319945_ferrari-sf90-stradale-ferrari-sf90-stradale-png-transparent.png" alt="SF90 Stradale" class="products__image"> 
                 <h3 class="products__name">SF90 Stradale</h3>
                 <p class="products__description">Descubre el SF90 Stradale</p>
+                <p class="products__price">$1,700,000</p>
+                <button class="add-to-cart">Agregar al carrito</button>
             </article>
             <article class="products__item">
                 <img src="img/R.jpg" alt="SF90 Spider" class="products__image">
                 <h3 class="products__name">SF90 Spider</h3>
                 <p class="products__description">Descubre el SF90 Spider</p>
+                <p class="products__price">$3,700,000</p>
+                <button class="add-to-cart">Agregar al carrito</button>
             </article>
             <article class="products__item">
                 <img src="img/OIP (1) 296 gtb.jpg" alt="296 GTB" class="products__image">
                 <h3 class="products__name">296 GTB</h3>
                 <p class="products__description">Descubre el 296 GTB</p>
+                <p class="products__price">$4,000,000</p>
+                <button class="add-to-cart">Agregar al carrito</button>
             </article>
-            <!-- Cambio 2: Agregar un nuevo producto -->
+            
             <article class="products__item">
                 <img src="img/nuevo.jpg" alt="Nuevo Modelo" class="products__image">
                 <h3 class="products__name">Nuevo Modelo</h3>
                 <p class="products__description">Descubre el nuevo modelo de Ferrari</p>
+                <p class="products__price">$5,700,000</p>
+                <button class="add-to-cart">Agregar al carrito</button>
             </article>
         </section>
         <section class="cart">
             <h2 class="cart__title">SOLICITAR VEHÍCULO</h2>
-            <div class="cart__item">
-                <img src="img/R.jpg" alt="Vehículo" class="cart__image">
-                <p class="cart__name">Ferrari</p>
-                <p class="cart__price">$1700000</p>
-                <i class="cart__delete-icon"  alt="Icono quitar vehículo"><img src="img/kindpng_1082635.png" /></i>
+            <div class="cart__items">
+               
             </div>
         </section>
+        
+        <aside class="side-menu" id="side-menu">
+            <i class="menu__close-menu" alt="icono cerrar menu"> <img src="img/multiply-mathematical-sign.png"></i>
+            <nav>
+                <h2>Ferrari</h2>
+                <ul>
+                    <li class="menu__op">Racing</li>
+                    <li class="menu__op">Sport cars</li>
+                    <li class="menu__op">Colecciones</li>
+                    <li class="menu__op">Experiencias</li>
+                    <li class="menu__op">About us</li>
+                    
+                </ul>
+            </nav>
+
+        </aside>
+        
+        
+        
     </main>
 </body>
 </html>
