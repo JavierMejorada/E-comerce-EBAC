@@ -274,13 +274,13 @@ img {
     cursor: pointer;
 }
 .cart-container {
-    position: relative; /* Establecemos una posición relativa para manejar los elementos dentro de este contenedor */
+    position: relative; 
 }
 
 .cart-count {
     position: absolute;
-    top: -10px; /* Mueve el contador un poco hacia arriba */
-    right: -5px; /* Mantiene el contador a la derecha del icono */
+    top: -10px; 
+    right: -5px; 
     background-color: white;
     color: black;
     border-radius: 50%;
@@ -289,5 +289,11 @@ img {
     text-align: center;
     font-size: 12px;
     font-weight: bold;
-    line-height: 20px; /* Centra el texto dentro del círculo */
+    line-height: 20px; 
+}
+
+.cart__delete-icon {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
 }

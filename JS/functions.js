@@ -1,25 +1,13 @@
+function toggleClass(element, className) {
+    element.classList.toggle(className);
+}
+
 const header = document.querySelector("header");
-const cartIcon = header.lastElementChild 
+const cartIcon = document.querySelector(".header__icon.cart-container");
 const cart = document.querySelector(".cart");
-
-console.log(header); 
-
-cartIcon.addEventListener("click", () => {
-    cart.classList.toggle("show"); 
-});
-
-const menuIcon = document.querySelector(".header__icon");  
-const sideMenu = document.querySelector(".side-menu"); 
-const closeMenuIcon = document.querySelector(".menu__close-menu"); 
-
-menuIcon.addEventListener("click", () => {
-    sideMenu.classList.toggle("showmenu");  
-});
-
-closeMenuIcon.addEventListener("click", () => {
-    sideMenu.classList.remove("showmenu");  
-});
-
+const menuIcon = document.querySelector(".header__icon");
+const sideMenu = document.querySelector(".side-menu");
+const closeMenuIcon = document.querySelector(".menu__close-menu");
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 const cartItemsContainer = document.querySelector('.cart__items');
 const cartCountElement = document.querySelector('.cart-count');
@@ -45,8 +33,6 @@ function updateCart(productName, productPrice, productImage) {
     updateCartCount();
 
     const deleteIcon = cartItem.querySelector('.cart__delete-icon');
-    deleteIcon.style.width = "100px";
-    deleteIcon.style.height = "100px";
     deleteIcon.addEventListener('click', () => {
         cartItem.remove();
         cartCount--;
@@ -54,13 +40,18 @@ function updateCart(productName, productPrice, productImage) {
     });
 }
 
+cartIcon.addEventListener("click", () => toggleClass(cart, "show"));
+menuIcon.addEventListener("click", () => toggleClass(sideMenu, "showmenu"));
+closeMenuIcon.addEventListener("click", () => sideMenu.classList.remove("showmenu"));
+
 addToCartButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-        const productItem = e.target.closest('.products__item'); 
-        const productName = productItem.querySelector('.products__name').textContent; 
-        const productPrice = productItem.querySelector('.products__price').textContent.replace('$', '').replace(',', ''); 
+        const productItem = e.target.closest('.products__item');
+        const productName = productItem.querySelector('.products__name').textContent;
+        const productPrice = parseFloat(productItem.querySelector('.products__price').textContent.replace(/[^\d.]/g, ''));
         const productImage = productItem.querySelector('img').src;
 
         updateCart(productName, productPrice, productImage);
     });
 });
+
