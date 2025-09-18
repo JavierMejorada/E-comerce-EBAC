@@ -32,7 +32,7 @@ Este proyecto combina **maquetación, estilos avanzados y programación en JavaS
 
 ## 📬 Contacto
 Si deseas conocer más de mis proyectos o colaborar:  
-- 📧 **Correo:** tunombre@email.com  
+- 📧 **Correo:** jjavier0139@gmail.com  
 - 💼 **LinkedIn:** [Mi perfil](https://www.linkedin.com/in/javier-mejorada-frontend/)  
 
 ---
